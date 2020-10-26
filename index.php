@@ -15,13 +15,8 @@
         
 
         <title> SCP Index - SCP Foundation </title>
-
-    </head>
-
-    <body class=" bg-light text-dark" >
         
         
-
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
     <a class="navbar-brand" >SCP Foundation</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,8 +25,8 @@
 
 
     
-    <button type="button" onclick="TextToSpeech()" class="btn btn-info" style="margin-left: 1%;"> Text To Speech </button>
-    
+    <button type="button" onclick="TextToSpeech() " class="btn btn-info" style="margin-left: 1%;"> Text To Speech </button>
+
 
     
 
@@ -41,17 +36,20 @@
      </div>
     </nav>
 
-    
-    
+    </head>
+
+    <body class=" bg-light text-dark" id="text" >
+        
+        
     <?php $files = json_decode(file_get_contents('scp_files.json')) ?>
 
     <br><br>
     
 
     <?php foreach($files as $display): ?>
-    <main  class ='container-md' style='max-width:1300px;'>
+    <main class="container-fluid" style='max-width:1300px;'>
       
-    <h1 id="text"> Name: <?php echo $display->name; ?> </h1>
+    <h1> Name: <?php echo $display->name; ?> </h1>
     <h2> Class: <?php echo $display->class; ?> </h2>
     <p><img src='<?php echo $display->image; ?>' style='width: 50%; max-width:100%; display: block; margin-left: auto; margin-right: auto;'></p>
     <h3> Containment </h3> <p> <?php echo $display->containment; ?> </p>
@@ -75,7 +73,7 @@
     </main>    
     <div style='margin-bottom: 10%;'></div>
     
-    <?php endforeach; ?>
+    <?php  endforeach; ?>
 
 
  
